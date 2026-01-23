@@ -6,7 +6,7 @@ format:
     theme: simple
     slide-number: true
     transition: slide
-    center: true
+    center: false
 ---
 
 ## Agent-Based Risk Analysis and Assessment on Windows-Based Machines Using ISO 27001 {.scrollable}
