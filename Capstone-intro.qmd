@@ -1,6 +1,6 @@
 ---
 title: "Agent-Based Risk Analysis and Assessment on Windows-Based Machines Using ISO 27001"
-Author "Mehran Tajbakhsh"
+author: "Mehran Tajbakhsh"
 format:
   revealjs:
     theme: simple
@@ -96,14 +96,14 @@ Multiple specialized agents continuously collect evidence, analyze risk, map fin
 
 Commercial platforms such as **Nessus, Qualys, and Rapid7 Nexpose/InsightVM** are widely used for enterprise vulnerability management.
 
-- **Nessus (Tenable)**: broad coverage via plugins; **licensing cost** and operational overhead can be high
-- **Qualys VM**: cloud-based with sensors; can raise **internet dependency** and **data sovereignty** concerns
+- **Nessus (Tenable)**: broad coverage via plugins; licensing cost and overhead can be high
+- **Qualys VM**: cloud-based with sensors; may raise internet dependency and data sovereignty concerns
 - **Rapid7 Nexpose/InsightVM**: strong enterprise workflows; often requires significant deployment and tuning
 
 **Common limitations:**
 - Expensive licensing for many organizations
-- Scans can be **time-consuming (45–90 minutes)** and generate heavy network traffic
-- Outputs may still require **expert interpretation** and manual remediation planning
+- Scans can be time-consuming (45–90 minutes) and generate heavy network traffic
+- Outputs may still require expert interpretation and manual remediation planning
 
 **Gap addressed:**  
 A lightweight, Windows-optimized approach enhanced with **agent automation + LLM reasoning** for usability, prioritization, and remediation guidance.
