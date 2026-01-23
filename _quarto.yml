@@ -1,0 +1,10 @@
+```yaml
+project:
+  type: website
+
+website:
+  title: "Quarto Slides"
+
+format:
+  revealjs:
+    theme: simple
