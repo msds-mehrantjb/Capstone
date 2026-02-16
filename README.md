@@ -19,20 +19,24 @@ This project implements a fully local, agent-based AI system that performs autom
 ---
 
 ## Architecture Overview
-React Web GUI <br/>
-│ <br/>
-▼ <br/>
-FastAPI Backend (API + Event Streaming) <br/>
-│ <br/>
-▼ <br/>
-Agent Runtime (LangGraph) <br/>
-├── Tool Execution Layer <br/>
-├── RAG (Chroma Vector Database) <br/>
-├── Local LLM Inference (Ollama) <br/>
-└── Report Generation <br/>
-│ <br/>
-▼ <br/>
-Local Storage (Artifacts, Logs, Reports) <br/>
+
+```
+            React Web GUI
+                 │
+                 ▼
+   FastAPI Backend (API + Event Streaming)
+                 │
+                 ▼
+        Agent Runtime (LangGraph)
+        ├── Tool Execution Layer
+        ├── RAG (Chroma Vector Database)
+        ├── Local LLM Inference (Ollama / llama.cpp)
+        └── Report Generation
+                 │
+                 ▼
+     Local Storage (Artifacts, Logs, Reports)
+```
+
 
 ---
 
