@@ -1,5 +1,5 @@
 # Capstone
-Agent-Based Risk Analysis and Assessment on Windows-Based Machines Using the ISO 27001 Standard
+Agent-Based Risk Analysis and Assessment on Windows-Based Machines Using the ISO 27001 Standard <br/>
 This project implements a fully local, agent-based AI system that performs automated risk analysis and assessment on Windows-based machines using Generative AI, structured tools, and Retrieval-Augmented Generation (RAG). The system provides a web-based GUI, local LLM inference, and persistent audit-ready results without relying on external cloud services.
 
 ---
