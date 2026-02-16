@@ -54,8 +54,8 @@ This project implements a fully local, agent-based AI system that performs autom
 
 ## Project Structure
 app/ <br/>
-├── ui/ # React web interface
-├── api/ # FastAPI backend
-├── agent/ # Agent workflows, tools, schemas
-├── data/ # Vector database and artifacts
+├── ui/ # React web interface <br/>
+├── api/ # FastAPI backend <br/>
+├── agent/ # Agent workflows, tools, schemas <br/>
+├── data/ # Vector database and artifacts <br/>
 └── storage/ # Reports, logs, and run metadata
