@@ -20,29 +20,6 @@ This project implements a fully local, agent-based AI system that performs autom
 
 ## Architecture Overview
 
-```mermaid
-flowchart TD
-    UI[React Web GUI]
-    API[FastAPI Backend]
-    AGENT[Agent Runtime (LangGraph)]
-    TOOLS[Tool Execution Layer]
-    RAG[RAG - Chroma Vector DB]
-    LLM[Local LLM - Ollama / llama.cpp]
-    REPORT[Report Generation]
-    STORAGE[Local Storage]
-
-    UI --> API
-    API --> AGENT
-    AGENT --> TOOLS
-    AGENT --> RAG
-    AGENT --> LLM
-    AGENT --> REPORT
-    REPORT --> STORAGE
-```
-
-
-## Architecture Overview
-
 ```
             React Web GUI
                  │
