@@ -1,0 +1,220 @@
+ISO 27001 Agent-Based Risk Analysis and Assessment System Full Stack
+Architecture, Installation Guide, and Project Structure Author: Mehran
+Tajbakhsh
+
+============================================================ 1. SYSTEM OVERVIEW ============================================================
+
+This project implements a fully local, agent-based cybersecurity risk
+analysis and assessment system aligned with ISO 27001 standards. It
+automatically collects Windows system metadata, stores and analyzes it
+using a vector database, and uses a local Large Language Model (LLM) to
+generate structured risk assessments.
+
+Key capabilities:
+
+-   Automated Windows metadata collection
+-   ISO 27001 control mapping
+-   Risk identification and classification
+-   Retrieval-Augmented Generation (RAG)
+-   Local LLM reasoning (no cloud dependency)
+-   Structured risk report generation
+-   Fully offline enterprise deployment capability
+
+============================================================ 2. FULL STACK TECHNOLOGY SPECIFICATIONS ============================================================
+
+Operating System: - Windows 10/11 or Windows Server 2019/2022 (agent
+targets) - Development environment: Windows or Linux
+
+Programming Language: - Python 3.11
+
+Core AI Stack: - LangChain 1.x - LangGraph (agent orchestration) -
+Ollama (local LLM runtime) - Llama3 or Mistral models
+
+Embedding Model: - nomic-embed-text
+
+Vector Database: - ChromaDB (local persistent vector store)
+
+Agent Collection Layer: - PowerShell (system metadata collection) -
+Python (processing and orchestration)
+
+Reporting Layer: - Jinja2 templating - JSON and text report output
+
+Optional Interface: - FastAPI (local REST interface)
+
+============================================================ 3. LOCAL LLM INSTALLATION ============================================================
+
+Install Ollama:
+
+Download from: https://ollama.com/download
+
+Install required models:
+
+ollama pull llama3:8b ollama pull nomic-embed-text
+
+Verify:
+
+ollama list
+
+============================================================ 4. PYTHON ENVIRONMENT SETUP ============================================================
+
+Create environment:
+
+conda create -n iso_agent python=3.11 -y conda activate iso_agent
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+============================================================ 5. PROJECT STRUCTURE ============================================================
+
+iso_agent/ 
+│ 
+├── agent/ 
+│ 
+├── collector.ps1 
+│ 
+├── metadata_collector.py
+│ 
+├── core/ 
+│ 
+├── llm_engine.py 
+│ 
+├── rag_engine.py 
+│ 
+├── risk_engine.py
+│ 
+├── iso_mapper.py 
+│ 
+├── rag/ 
+│ 
+├── embedder.py 
+│ 
+├── vector_store.py 
+│
+├── reports/ 
+│ 
+├── report_generator.py 
+│ 
+├── templates/ 
+│ 
+├── chroma_db/
+│ 
+├── config/ 
+│ 
+├── settings.yaml 
+│ 
+├── logs/ 
+│ 
+├── main.py 
+│ 
+└── requirements.txt
+
+============================================================ 6. SYSTEM WORKFLOW ============================================================
+
+Step 1: Metadata Collection
+
+PowerShell agent collects:
+
+-   OS version
+-   Domain membership
+-   Installed roles
+-   Installed software
+-   Running services
+-   Network configuration
+
+Output saved as JSON.
+
+Step 2: Metadata Processing
+
+Python parses metadata and extracts relevant risk indicators.
+
+Step 3: Vector Storage
+
+ISO controls and security baselines embedded and stored in ChromaDB.
+
+Step 4: Retrieval
+
+Relevant ISO controls retrieved using semantic similarity.
+
+Step 5: Risk Analysis
+
+Local LLM evaluates:
+
+-   Risk description
+-   Impact
+-   Likelihood
+-   Mitigation
+-   ISO control reference
+
+Step 6: Report Generation
+
+Structured reports generated in:
+
+-   JSON
+-   Text
+-   HTML (optional)
+
+============================================================ 7. RAG PIPELINE ARCHITECTURE ============================================================
+
+Metadata 
+↓ 
+Embedding Model 
+↓ 
+Chroma Vector Database 
+↓ 
+Retriever 
+↓ 
+Local LLM 
+↓ 
+Risk Analysis Output
+
+============================================================ 8. SECURITY DESIGN ============================================================
+
+Security controls implemented:
+
+-   Fully local execution
+-   No cloud data transmission
+-   Model access restricted to localhost
+-   Data stored locally
+-   Audit logging enabled
+
+============================================================ 9. ENTERPRISE DEPLOYMENT MODEL ============================================================
+
+Deployment options:
+
+Single host deployment Central server deployment Air-gapped secure
+environment
+
+============================================================ 10. HARDWARE REQUIREMENTS ============================================================
+
+Minimum:
+
+CPU: 4 cores RAM: 16 GB Disk: 20 GB
+
+Recommended:
+
+CPU: 8 cores RAM: 32 GB GPU: Optional (for faster inference)
+
+============================================================ 11. MODEL SPECIFICATIONS ============================================================
+
+LLM: - llama3:8b
+
+Embedding model: - nomic-embed-text
+
+============================================================ 12. MAIN EXECUTION FLOW ============================================================
+
+Execution command:
+
+python main.py
+
+Workflow:
+
+Collect metadata Store metadata Retrieve ISO controls Analyze risks
+Generate report
+
+============================================================ 13.OPTIONAL ADVANCED FEATURES ============================================================
+
+Agent orchestration via LangGraph Multi-agent reasoning Executive
+summary generation Compliance gap analysis Continuous monitoring
+
+============================================================ END OF DOCUMENT ============================================================

@@ -1,0 +1,88 @@
+{
+  "environment": "Production",
+  "scope": {
+    "name": "Project Management: Mehran Tajbakhsh",
+    "asset_count": 0,
+    "status": "Success"
+  },
+  "kpis": {
+    "readiness_score": {
+      "value": 0,
+      "max": 100,
+      "label": "Blocked",
+      "delta_7d": 0
+    },
+    "evidence_coverage": {
+      "percent": 0.0,
+      "have": 0,
+      "total": 0
+    },
+    "open_high_critical": {
+      "count": 0,
+      "unresolved": 0
+    },
+    "soa": {
+      "status": "Blocked",
+      "label": "Blocked",
+      "pending_approvals": 0
+    }
+  },
+  "lifecycle": [
+    {
+      "step": 1,
+      "status": "Completed",
+      "name": "Scope & Context"
+    },
+    {
+      "step": 2,
+      "status": "blocked"
+    },
+    {
+      "step": 3,
+      "status": "blocked"
+    },
+    {
+      "step": 4,
+      "status": "blocked"
+    },
+    {
+      "step": 5,
+      "status": "blocked"
+    },
+    {
+      "step": 6,
+      "status": "blocked"
+    },
+    {
+      "step": 7,
+      "status": "blocked"
+    },
+    {
+      "step": 8,
+      "status": "blocked"
+    },
+    {
+      "step": 9,
+      "status": "blocked"
+    },
+    {
+      "step": 10,
+      "status": "blocked"
+    },
+    {
+      "step": 11,
+      "status": "blocked"
+    }
+  ],
+  "blockers": [],
+  "scopes": [
+    {
+      "name": "Project Management: Mehran Tajbakhsh",
+      "asset_count": 0
+    },
+    {
+      "name": "Technical Research & Development",
+      "asset_count": 0
+    }
+  ]
+}

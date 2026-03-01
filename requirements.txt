@@ -1,0 +1,52 @@
+# Core LangChain ecosystem (LangChain 1.x architecture)
+langchain==1.2.10
+langchain-core==1.2.13
+langchain-community==0.4.1
+langchain-chroma==1.1.0
+langchain-text-splitters==1.1.0
+
+# Vector database
+chromadb==1.0.15
+
+# Local LLM integration
+ollama==0.3.3
+
+# Embeddings and ML utilities
+sentence-transformers==3.0.1
+numpy==1.26.4
+scikit-learn==1.5.1
+scipy==1.13.1
+
+# Data processing
+pandas==2.2.2
+pyyaml==6.0.2
+
+# JSON and schema validation
+pydantic==2.8.2
+
+# System and OS interaction
+psutil==6.0.0
+
+# Report generation
+jinja2==3.1.4
+
+# Logging and utilities
+python-dotenv==1.0.1
+tqdm==4.66.4
+
+# Optional: agent orchestration (recommended)
+langgraph==0.2.16
+
+# Optional: structured output parsing
+orjson==3.10.7
+
+# Optional: API / local service interface
+fastapi==0.112.0
+uvicorn==0.30.3
+
+# Optional: testing
+pytest==8.3.2
+
+# Optional: visualization / reporting
+matplotlib==3.9.1
+seaborn==0.13.2
