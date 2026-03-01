@@ -18,7 +18,14 @@ This project implements a fully local, agent-based AI system that performs autom
 
 ---
 
+<<<<<<< HEAD
  React Web GUI
+=======
+## Architecture Overview
+
+```
+            React Web GUI
+>>>>>>> 606cc72f7989e275c0e5d9bf9c5aadb3416c2f1d
                  │
                  ▼
    FastAPI Backend (API + Event Streaming)
@@ -32,6 +39,10 @@ This project implements a fully local, agent-based AI system that performs autom
                  │
                  ▼
      Local Storage (Artifacts, Logs, Reports)
+<<<<<<< HEAD
+=======
+```
+>>>>>>> 606cc72f7989e275c0e5d9bf9c5aadb3416c2f1d
 
 
 ---
