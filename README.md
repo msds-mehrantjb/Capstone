@@ -61,3 +61,27 @@ app/ <br/>
 ├── agent/ # Agent workflows, tools, schemas <br/>
 ├── data/ # Vector database and artifacts <br/>
 └── storage/ # Reports, logs, and run metadata
+
+Capstone-main/
+│
+├── app/
+│   ├── main.py
+│   ├── agent/  # Agent workflows, tools, schemas <br/>
+│   ├── api/     # FastAPI backend <br/>
+│   ├── chroma_db/
+│   ├── llm/
+│   │   (LLM integration modules)
+│   ├── rag/
+│   ├── reports/
+│   │   (report generation)
+│   ├── src/                     ← Frontend 
+│   │   ├── api/
+│   │   ├── components/
+│   │   └── pages/    # React web interface <br/>
+│   └── storage/
+│       (persistent runtime storage)
+├── data/
+│   ├── work/     # Working files
+│   ├── /docs     # Reference files 
+│   └── raw/      # Json files
+└── (project root)
