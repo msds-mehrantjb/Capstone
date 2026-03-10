@@ -78,8 +78,7 @@ Capstone-main/ <br/>
 │   │   ├── api/ <br/>
 │   │   ├── components/ <br/>
 │   │   └── pages/    # React web interface <br/>
-│   └── storage/ <br/>
-│       (persistent runtime storage) <br/>
+│   └── storage/    (persistent runtime storage) <br/>
 ├── data/ <br/>
 │   ├── work/     # Working files <br/>
 │   ├── /docs     # Reference files  <br/>
