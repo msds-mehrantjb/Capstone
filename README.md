@@ -68,20 +68,20 @@ Capstone-main/
 │   ├── main.py
 │   ├── agent/  # Agent workflows, tools, schemas <br/>
 │   ├── api/     # FastAPI backend <br/>
-│   ├── chroma_db/
-│   ├── llm/
-│   │   (LLM integration modules)
-│   ├── rag/
+│   ├── chroma_db/  <br/>
+│   ├── llm/  <br/>
+│   │   (LLM integration modules) <br/>
+│   ├── rag/ <br/>
 │   ├── reports/
-│   │   (report generation)
-│   ├── src/                     ← Frontend 
-│   │   ├── api/
-│   │   ├── components/
+│   │   (report generation) <br/>
+│   ├── src/                     ← Frontend  <br/>
+│   │   ├── api/ <br/>
+│   │   ├── components/ <br/>
 │   │   └── pages/    # React web interface <br/>
-│   └── storage/
-│       (persistent runtime storage)
-├── data/
-│   ├── work/     # Working files
-│   ├── /docs     # Reference files 
-│   └── raw/      # Json files
+│   └── storage/ <br/>
+│       (persistent runtime storage) <br/>
+├── data/ <br/>
+│   ├── work/     # Working files <br/>
+│   ├── /docs     # Reference files  <br/>
+│   └── raw/      # Json files <br/>
 └── (project root)
