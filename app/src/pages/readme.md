@@ -12,7 +12,7 @@ The Asset Inventory & CIA System automatically discovers, classifies, and evalua
 - Machine learning–assisted role prediction
 - Infrastructure clustering and anomaly detection
 
-# Detection Architecture
+## Detection Architecture
 
 The system uses a **hybrid detection approach** combining:
 
