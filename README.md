@@ -62,10 +62,10 @@ app/ <br/>
 ├── data/ # Vector database and artifacts <br/>
 └── storage/ # Reports, logs, and run metadata
 
-Capstone-main/
-│
-├── app/
-│   ├── main.py
+Capstone-main/ <br/>
+│ <br/>
+├── app/ <br/>
+│   ├── main.py <br/>
 │   ├── agent/  # Agent workflows, tools, schemas <br/>
 │   ├── api/     # FastAPI backend <br/>
 │   ├── chroma_db/  <br/>
