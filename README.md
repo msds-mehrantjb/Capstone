@@ -69,11 +69,9 @@ Capstone-main/ <br/>
 │   ├── agent/  # Agent workflows, tools, schemas <br/>
 │   ├── api/     # FastAPI backend <br/>
 │   ├── chroma_db/  <br/>
-│   ├── llm/  <br/>
-│   │   (LLM integration modules) <br/>
+│   ├── llm/    (LLM integration modules) <br/>
 │   ├── rag/ <br/>
-│   ├── reports/ <br/>
-│   │   (report generation) <br/>
+│   ├── reports/    (report generation) <br/>
 │   ├── src/                     ← Frontend  <br/>
 │   │   ├── api/ <br/>
 │   │   ├── components/ <br/>
