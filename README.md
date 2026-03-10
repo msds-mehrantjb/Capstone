@@ -72,7 +72,7 @@ Capstone-main/ <br/>
 │   ├── llm/  <br/>
 │   │   (LLM integration modules) <br/>
 │   ├── rag/ <br/>
-│   ├── reports/
+│   ├── reports/ <br/>
 │   │   (report generation) <br/>
 │   ├── src/                     ← Frontend  <br/>
 │   │   ├── api/ <br/>
