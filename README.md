@@ -48,12 +48,10 @@ This project implements a fully local, agent-based AI system that performs autom
 
 - Frontend: React + Vite
 - Backend: FastAPI (Python)
-- Agent Orchestration: LangGraph
-- Local LLM Runtime: Ollama or llama.cpp
-- Vector Database: Chroma
-- Data Validation: Pydantic
-- Streaming: Server-Sent Events (SSE)
-
+- ChromaDB for vector storage and RAG memory
+- LangGraph for orchestration and step-based agent execution
+- Ollama for local chat + embeddings
+- JSON/CSV as the authoritative workflow store for now
 ---
 
 ## Project Structure
