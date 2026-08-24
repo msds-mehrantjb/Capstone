@@ -9,6 +9,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  deployments: write
 
 concurrency:
   group: "pages"
@@ -19,7 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+        with:
+          enablement: true
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -28,7 +34,7 @@ jobs:
         run: quarto render
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
@@ -41,4 +47,41 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+
+      - name: Remove older GitHub Pages deployments
+        if: success()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          mapfile -t deployment_ids < <(
+            gh api --paginate \
+              -H "Accept: application/vnd.github+json" \
+              "/repos/${GITHUB_REPOSITORY}/deployments?environment=github-pages&per_page=100" \
+              --jq '.[].id'
+          )
+
+          if (( ${#deployment_ids[@]} <= 1 )); then
+            echo "No older GitHub Pages deployments to remove."
+            exit 0
+          fi
+
+          echo "Keeping newest deployment: ${deployment_ids[0]}"
+
+          for deployment_id in "${deployment_ids[@]:1}"; do
+            echo "Marking older deployment inactive: ${deployment_id}"
+            gh api --method POST \
+              -H "Accept: application/vnd.github+json" \
+              "/repos/${GITHUB_REPOSITORY}/deployments/${deployment_id}/statuses" \
+              -f state=inactive \
+              -f environment=github-pages \
+              -f description='Superseded by newer GitHub Pages deployment'
+
+            echo "Deleting older deployment: ${deployment_id}"
+            gh api --method DELETE \
+              -H "Accept: application/vnd.github+json" \
+              "/repos/${GITHUB_REPOSITORY}/deployments/${deployment_id}"
+          done

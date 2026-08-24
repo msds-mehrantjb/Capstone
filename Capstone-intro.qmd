@@ -1,5 +1,5 @@
 ---
-title: "Agent-Based Risk Analysis and Assessment on Windows-Based Machines Using ISO 27001 Standard"
+title: "Agent-Based Risk Analysis and Assessment on Windows-Based Machines Using ISO 27001"
 
 author: "Mehran Tajbakhsh"
 format:
@@ -9,163 +9,119 @@ format:
     transition: slide
     mainfont: "Arial"
     fontsize: "1.2em"
+---
+
+## Project Overview, Usage, and Highlighted Features
+
+**Project**
+
+- Local ISO 27001 audit-readiness platform for Windows-based environments
+- Combines a React frontend, FastAPI backend, ML-assisted scoring, RAG retrieval, and local Qwen reasoning
+
+**How It Is Used**
+
+- Define audit scope and boundaries
+- Discover and classify assets, then assess threats, controls, and risk
+- Generate treatment actions, evidence rows, guide documents, and final deliverables in one workflow
+
+**Highlighted Features**
+
+- ML-assisted asset role prediction and user-behavior risk scoring
+- RAG + Qwen reasoning for control selection, treatment generation, evidence generation, and downloadable guides
+- Final Deliverables and AI/ML Performance Dashboard views built from the same workflow data
 
 ---
 
-## About Me
+## ISO 27001 Audit Readiness Dashboard
 
-- More than **25 years of experience** in cybersecurity, networking, and systems engineering
-- **M.S. in Data Science** — University of Arizona
-- **M.S. in Computer Science (Cybersecurity)** — Arizona State University
-- **ISO 27001 Lead Auditor (since 2012)** with **10+ completed projects** as a project manager
-- Completed **two intensive 6-month bootcamps** in the past year:
-  - Artificial Intelligence and Machine Learning Bootcamp – Caltech, Feb 2025
-  - Applied Generative AI Specialization Bootcamp – Purdue University, Dec 2025
-    - focused on: 
-      - Agentic frameworks
-      - Generative AI
-      - Large Language Models (LLMs)
+Overall workflow progress, KPI snapshot, and current audit status.
 
-
-**Why This Project**<br/>
-- Leverages **agent-based automation** and **LLM reasoning** to modernize a traditionally **manual and labor-intensive risk assessment process**
+![](output/images/iso27001_dashboard.png){width=100%}
 
 ---
 
-## Commercial Vulnerability Scanners in the Market {.scrollable}
+## Scope & Context
 
-- **Nessus (Tenable)**: broad coverage via plugins; licensing cost and overhead can be high<sup>1</sup>
-- **Qualys VM**: cloud-based with sensors; may raise internet dependency and data sovereignty concern<sup>2</sup>
-- **Rapid7 Nexpose/InsightVM**: strong enterprise workflows; often requires significant deployment and tuning<sup>3</sup>
+Defines the audit boundary, organizational scope, and baseline audit package.
 
-**Common limitations:** <br/>
-- Expensive licensing for many organizations <br/>
-- Scans can be time-consuming (45–90 minutes) and generate heavy network traffic <br/>
-- Outputs may still require expert interpretation and manual remediation planning <br/>
-
-<small>
-*References:*<br/>
-1- Tenable Network Security, “Nessus Professional Vulnerability Scanner,” https://www.tenable.com/products/nessus, accessed Jan. 2026.<br/>
-2- Qualys Inc., “Qualys Vulnerability Management, Detection and Response Platform,” https://www.qualys.com/apps/vulnerability management-detection-response/, accessed Jan. 2026. <br/>
-3- Greenbone Networks, “OpenVAS — Open Vulnerability Assessment Scanner,” https://www.openvas.org/, accessed Jan. 2026.
-</small>
+![](output/images/scope_context.png){width=100%}
 
 ---
 
-## Problem Statement (Why This Matters)
+## Asset Inventory & CIA
 
-- Enterprise networks face rapidly evolving cyber threats and constant configuration changes
-- Organizations struggle to maintain real-time security visibility in enterprise environments.
-- Traditional assessments (manual audits + scheduled scans) are too slow and expensive
+Builds the inventory, applies role assignment, and sets CIA ratings for assets.
 
-**Result:** Security posture becomes outdated quickly, increasing exposure and compliance risk.
-
-- This project delivers **continuous, automated, Windows-focused risk assessment** <br/>
-- Built for **deep visibility + low overhead** using native Windows APIs and PowerShell <br/>
-- Produces actionable findings aligned with **security best practices** and **ISO 27001 controls** <br/>
-
-**Gap addressed:** A lightweight, Windows-optimized approach enhanced with **agent automation + LLM reasoning** for usability, prioritization, and remediation guidance.
+![](output/images/asset_inventory_cia.png){width=100%}
 
 ---
 
-## Major Steps in Risk Analysis abd Assessment Alignesd with ISO 27001 Standard 
-- Establish the Context (Scope & Boundaries)
-- Asset Identification & Classification
-- Identify Threats & Threat Sources
-- Identify Vulnerabilities & Weaknesses
-- Identify Existing Controls (Current Security Posture)
-- Risk Analysis (Likelihood + Impact)
-- Risk Evaluation (Prioritize & Decide)
-- Risk Treatment (Choose a Treatment Option)
-- Select ISO 27001 Controls (Annex A Mapping)
-- Map treatment actions to ISO 27001 Annex A controls
-- Implement Controls & Action Plan
-- Monitor, Review, and Improve (Continuous Risk Management)
+## Threats & Vulnerabilities
 
+Maps each host to vulnerabilities and threat context for the assessment.
 
-## Proposed Solution: Agent + LLM Enabled Risk Analysis and Assessment Platform
-- **Establish the Context (Scope & Boundaries)** 
-  - Agentic help:
-    - Detects OS type (Windows Server vs Desktop)
-    - Discovers domain membership, environment (prod/dev)
-    - Identifies installed roles (AD, IIS, SQL, File Server,...)
-  - LLM help:
-    - Create conversational interface lowers the barrier for non-specialists admins
-    - Generates ISO-style scope statements automatically
-- **Asset Identification & Classification**
-  - Agentic Help:
-    - Enumerates software, services, ports, users, data locations
-    - Identifies sensitive assets (databases, cert stores, AD,...)
-  - LLM help:
-    - Classify assets by confidentiality / integrity / availability (CIA) importance
+![](output/images/threats_vulnerabilities.png){width=100%}
 
-## Proposed Solution: Agent + LLM Enabled Risk Analysis and Assessment Platform (Continued)
-- **Identify Threats & Threat Sources**
-  - Agent Help
-    - Maps detected assets → threat categories
-- **Identify Vulnerabilities & Weaknesses**
-  - Agent help:
-    - Checks patch levels
-    - Detects insecure configurations
-    - Flags unnecessary services/software
-    - Correlates software versions with CVE feeds
-- **Identify Existing Controls (Current Security Posture)**
-  - Agent help:
-    - Detects MFA, EDR, firewall, backups, encryption, ...
-    - Validates configuration state (enabled, configured) 
-  - LLM help:
-    - Maps detected controls to ISO 27001 Annex A
-    - Writes justification text automatically
+---
 
-## Proposed Solution: Agent + LLM Enabled Risk Analysis and Assessment Platform (Continued)
-- **Risk Analysis (Likelihood + Impact)**
-  - Agent help:
-    - Calculates likelihood from exposure, exploitability
-    - Estimates impact from asset criticality + role
-  - LLM help:
-    - Converts numeric scores into:
-      - Human-explainable reasoning
-      - Management-level risk language
-- **Risk Evaluation (Prioritize & Decide)**
-  - Agent help:
-    - Compares risks against acceptance criteria
-    - Flags risks requiring treatment
-- **Risk Treatment Selection**
-  - LLM help:
-    - Proposes mitigate/avoid/transfer/accept options via conversational interface
-    - Generates ISO-compliant treatment descriptions
+## Existing Controls & Postures
 
-## Proposed Solution: Agent + LLM Enabled Risk Analysis and Assessment Platform (Continued)
-- **Select ISO 27001 Controls (Annex A Mapping)**
-  - Agent help:
-    - Auto-selects relevant Annex A controls
-    - Tracks applied vs excluded controls
-  - LLM help:
-    - Writes the Statement of Applicability
-- **Implement Controls & Action Plan**
-  - Agent help:
-    - Validates control implementation status
-  - LLM help:
-    - Generates:
-      - Task descriptions
-      - Remediation documentation
-      - Policy text drafts
-- **Monitor, Review, and Improve (Continuous Risk Management)**
-  - Agent help:
-    - Watches for config drift, new software, new threats
-    - Triggers reassessment automatically
-  - LLM help:
-    - Summarizes changes into:
-      - Management dashboards, or natural language interface instead of dashboards
-      - Audit-ready reports
+Captures live or fallback control evidence and current security posture by host.
 
-## Typical ISO 27001 Outputs (Final Deliverables) 
+![](output/images/existing_controls_postures.png){width=100%}
 
-**An LLM serves as a smart ISO 27001 assistant that uses data and results captured during the risk analysis and assessment steps to generate the following outputs in predefined formats.** <br/>
+---
 
-- Risk assessment methodology <br/>
-- Asset inventory + classification <br/>
-- Risk register (scenarios, scores, owners) <br/>
-- Risk treatment plan <br/>
-- Statement of Applicability (SoA) <br/>
-- Evidence of implemented controls and monitoring <br/>
+## Risk Analysis
+
+Combines CVEs, CIA context, and user-behavior scoring into host-level risk records.
+
+![](output/images/risk_analysis.png){width=100%}
+
+---
+
+## Risk Evaluation & Treatment
+
+Converts analyzed risk into treatment decisions such as mitigate, monitor, or accept.
+
+![](output/images/risk_evaluation_treatment.png){width=100%}
+
+---
+
+## Annex A & SoA
+
+Uses ISO control mapping to build the Statement of Applicability from the risk context.
+
+![](output/images/annex_a_soa.png){width=100%}
+
+---
+
+## Action Plan / Implementation
+
+Generates implementation actions, evidence rows, and guide documents for treated items.
+
+![](output/images/action_plan_implementation.png){width=100%}
+
+---
+
+## Monitoring & Improvement
+
+Builds monitoring actions, evidence rows, and guide documents for items under observation.
+
+![](output/images/monitoring_improvement.png){width=100%}
+
+---
+
+## Final Deliverables
+
+Consolidates the workflow outputs into audit-ready reports and exportable sections.
+
+![](output/images/final_deliverables.png){width=100%}
+
+---
+
+## AI/ML Performance Dashboard
+
+Shows model metrics, RAG activity, local LLM usage, and dataset provenance.
+
+![](output/images/ai_ml_performance_dashboard.png){width=100%}
